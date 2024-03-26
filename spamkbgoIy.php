@@ -1,4 +1,3 @@
-<?php
 error_reporting(0);
 $no="\033[0m";
 $den="\033[1;30m";
