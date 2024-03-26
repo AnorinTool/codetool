@@ -31,7 +31,7 @@ $logo = "
 \033[1;34m ██║  ██║██║ ╚████║    ╚██████╔╝██║  ██║██║██║ ╚████║
 \033[1;37m ╚═╝  ╚═╝╚═╝  ╚═══╝     ╚═════╝ ╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝
 \033[1;31m────────────────────────────────────────────────────────────
-\033[1;31m[\033[1;37m=.=\033[1;31m] \033[1;37m=> \033[1;33mTOOL GỘP FREE
+\033[1;31m[\033[1;37m=.=\033[1;31m] \033[1;37m=> \033[1;33mTOOL MAIL Ngẫu Nhiên
 \033[1;31m[\033[1;37m=.=\033[1;31m] \033[1;37m=> \033[1;35mADMIN: \033[1;36mAN ORIN
 \033[1;31m[\033[1;37m=.=\033[1;31m] \033[1;37m=> \033[1;36mFB: \033[1;31manorintool
 \033[1;31m[\033[1;37m=.=\033[1;31m] \033[1;37m=> \033[1;32mBOX SUPPORT: \033[1;37mhttps://zalo.me/g/dpfbxq529
@@ -40,9 +40,9 @@ $logo = "
 system('clear');
 
 echo $logo;
-echo $thanh_dep.$luc."Nhập Số \033[1;31m[\033[1;33m1\033[1;31m] \033[1;32mĐào Mai Ngẫu Nhiên Việt Nam \n";
-echo $thanh_dep.$luc."Nhập Số \033[1;31m[\033[1;33m2\033[1;31m] \033[1;32mĐào Mai Ngẫu Nhiên Canada \n";
-echo $thanh_dep.$luc."Nhập Số \033[1;31m[\033[1;33m3\033[1;31m] \033[1;32mĐào Mai Ngẫu Nhiên Indonesia \n";
+echo $thanh_dep.$luc."Nhập Số \033[1;31m[\033[1;33m1\033[1;31m] \033[1;32mĐào Mail Ngẫu Nhiên Việt Nam \n";
+echo $thanh_dep.$luc."Nhập Số \033[1;31m[\033[1;33m2\033[1;31m] \033[1;32mĐào Mail Ngẫu Nhiên Canada \n";
+echo $thanh_dep.$luc."Nhập Số \033[1;31m[\033[1;33m3\033[1;31m] \033[1;32mĐào Mail Ngẫu Nhiên Indonesia \n";
 echo $thanh_dep.$luc."Nhập Chế Độ : $BWhite";
 $cd =trim(fgets(STDIN));
 echo $thanh_dep.$luc."Nhập Số Lượng : $BWhite";
