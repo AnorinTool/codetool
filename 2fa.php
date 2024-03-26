@@ -1,4 +1,3 @@
-<?php
 error_reporting(0);
 session_start();
 $xnhac = "\033[1;96m"; 
