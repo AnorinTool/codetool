@@ -1,4 +1,3 @@
-<?php
 error_reporting(1);
 $BBlack="\033[1;30m" ; 
 $BRed="\033[1;31m" ;
