@@ -1,4 +1,4 @@
-<?
+
 //
 error_reporting(0); // cái này phải luôn có ở mỗi đoạn code để fix những lỗi nhỏ nhặt trong code//
 $den = "\033[1;90m";
